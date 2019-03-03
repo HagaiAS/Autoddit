@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import App from '/containers/App';
+import GlobalStyles from 'styles/globals';
+import registerServiceWorker from 'utils/registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const renderApp = () => {
+    ReactDOM.render(
+        <div>
+            <GlobalStyles/>
+            <App/>
+        </div>,
+        document.getElementById('root'),
+    );
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+renderApp();
+registerServiceWorker();
